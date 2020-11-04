@@ -1,13 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d98e91b9-0d80-41b9-8e9b-b75147042cce" name="默认更改列表" comment="" />
+    <list default="true" id="d98e91b9-0d80-41b9-8e9b-b75147042cce" name="默认更改列表" comment="">
+      <change beforePath="$PROJECT_DIR$/pdf/1110205756.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdf/1110205757.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdf/1110205768.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdf/1110205769.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdf/1110205772.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdf/1110205773.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdf/3774805091.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdf/3774805093.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdf/3774805095.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdf/3774805097.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdf/3774805099.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdf/3774808001.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdf/3774808003.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdf/3774808005.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdf/3774808007.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdf/3774808009.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdf/3774808011.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdf/3778450804.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdf/CAR4527595.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdf/CAR4527596.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdf/CAR4527601.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdf/CAR4527602.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdf/CAR4527603.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdf/CAR4527604.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdf/invoice地铁发票.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdf/北京一卡通电子发票.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdf/快狗发票.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdf/滴滴电子发票A.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdf/滴滴电子发票B.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sum.js" beforeDir="false" afterPath="$PROJECT_DIR$/sum.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1jiz1OJmQ4gHRTDZpv6J7By4qlb" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -41,6 +77,7 @@
       <option name="presentableId" value="Default" />
       <updated>1604301483678</updated>
       <workItem from="1604301484918" duration="217000" />
+      <workItem from="1604394556363" duration="4000" />
     </task>
     <servers />
   </component>

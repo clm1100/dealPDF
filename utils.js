@@ -61,7 +61,6 @@ async function dealPDF(p){
             fs.copyFileSync(p, `./pdf2/${code}-${num}-${money}-陈黎明.pdf`);
             fs.unlinkSync(p);
             resolve()
-
         });
     })
     return result;
