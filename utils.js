@@ -51,13 +51,6 @@ async function dealPDF(p){
             }
             let money = brage1.match(reg2)[0];
             console.log(money)
-            // resolve();
-            // fs.copyFile(p,`./pdf2/${n}-${code}-${num}-${money}-陈黎明.pdf`,(err)=>{
-            //     if(err){
-            //         console.log("报错了")
-            //     }
-            //     resolve()
-            // })
             fs.copyFileSync(p, `./pdf2/${code}-${num}-${money}-陈黎明.pdf`);
             fs.unlinkSync(p);
             resolve()

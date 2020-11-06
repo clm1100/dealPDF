@@ -1,10 +1,11 @@
+#!/usr/bin/env node
 const fs = require('fs');
 const path = require('path');
-const arr = fs.readdirSync('./pdf');
+const pathPdf = process.cwd();
+const arr = fs.readdirSync(pathPdf);
 const dealPDF = require('./utils');
 var exec = require('child_process').exec;
 var cmdStr = `rm -rf ${path.join(__dirname,'pdf2')}`;
-
 
 (async()=>{
     await new Promise((resolve,reject)=>{
@@ -19,15 +20,11 @@ var cmdStr = `rm -rf ${path.join(__dirname,'pdf2')}`;
         })
 
     })
-
-
-
-    fs.mkdirSync('pdf2')
-    
-    let newarr = arr.slice(1,arr.length)
+    fs.mkdirSync('pdf2')   
+    let newarr = arr.filter(e=>!!e.includes('.pdf'))
     console.log(newarr);
     for (let i = 0; i < newarr.length; i++) {
-        let p = path.join(__dirname, 'pdf', newarr[i])
+        let p = path.join(pathPdf, newarr[i])
         await dealPDF(p)
     }
 })()

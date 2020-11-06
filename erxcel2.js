@@ -1,7 +1,9 @@
+#!/usr/bin/env node
 const XLSX = require('xlsx')
 const XLSXStyle = require('xlsx-style')
 const fs = require('fs');
-const arr = fs.readdirSync('./pdf2');
+const pathPDF = process.cwd();
+const arr = fs.readdirSync(pathPDF);
 const newarr = arr.filter(e => {
     return !e.includes('清单') && e.includes('pdf')
 })
@@ -23,6 +25,22 @@ const defaultCellStyle = {
     }
 }
 
+const titleStyle = {
+    font: {
+        name: "宋体", sz: 24,  bold: true,color: { rgb: "FFFFAA00" } },
+    border: {
+        top: { style: 'thin' },
+        bottom: { style: 'thin' },
+        left: { style: 'thin' },
+        right: { style: 'thin' }
+    },
+    alignment: {
+        horizontal: "center",
+        vertical: "center",
+        indent: 0
+    }
+}
+
 let tableData = newarr.map(e=>{
     let list = e.split('-');
     let l = list.length;
@@ -37,7 +55,7 @@ let tableData = newarr.map(e=>{
         money = list[2];
     } else if (l == 3) {
         pingzheng = list[0];
-        name = list[2]
+        name = list[2].split('.')[0]
         money = list[1]
     }
     return {
@@ -60,38 +78,25 @@ let table = tableData.map((e,i)=>{
         { v: e.pingzheng, s: defaultCellStyle },
         { v: e.name, s: defaultCellStyle },
         { v: e.date, s: defaultCellStyle },
-        { v: e.money, s: defaultCellStyle }
+        { v: e.money, s: defaultCellStyle, t: "n"}
     ]
 })
 
 
+let arrHeader = ['序号','发票号码', '凭证号', '报销人', '报销日期', '发票金额'].map(e=>{
+    return {
+        v:e,
+        s: defaultCellStyle
+    }
+})
 
-let arrHeader = [{
-    v: '序号',
-    s:defaultCellStyle
-},'发票号码', '凭证号', '报销人', '报销日期', '发票金额'];
 
 
 table.unshift(arrHeader)
 table.unshift([{
     v: '北京华亿创新信息技术有限公司电子发票报销台账（2020年）',
-    s:{
-        font: {
-            name: '宋体',
-            sz: 24,
-            bold: true,
-            color: { rgb: "FFFFAA00" }
-        },
-        alignment: { horizontal: "center", vertical: "center", wrap_text: true },
-        fill: { bgcolor: { rgb: 'ffff00' } },
-        border: {
-            top: { style: 'thin' },
-            bottom: { style: 'thin' },
-            left: { style: 'thin' },
-            right: { style: 'thin' }
-        },
-    }
-}, null, null, null, null,null]);
+    s: titleStyle
+}, { v: null, s: titleStyle }, { v: null, s: titleStyle }, { v: null, s: titleStyle }, { v: null, s: titleStyle }, { v: null, s: titleStyle }]);
 
 
 //1、定义导出文件名称

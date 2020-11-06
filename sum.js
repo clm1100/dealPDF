@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const fs = require('fs');
 const arr = fs.readdirSync('./pdf2');
 // console.log(arr);
