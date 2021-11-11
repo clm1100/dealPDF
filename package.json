@@ -14,9 +14,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "colors": "^1.4.0",
     "pdf-extraction": "^1.0.2",
     "pdf-parse": "^1.1.1",
-    "pdf2json": "^1.2.0",
     "pdfreader": "^1.2.7",
     "xlsx": "^0.16.8",
     "xlsx-style": "^0.8.13"

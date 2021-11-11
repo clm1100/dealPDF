@@ -1,27 +1,31 @@
 const PDFParser = require('pdf2json');
+const colors = require( "colors")
 const fs = require('fs');
 const path = require('path');
 function checkRate(input) {
-    var re = /^[0-9]+.?[0-9]*/;//判断字符串是否为数字//判断正整数/[1−9]+[0−9]∗]∗/ 
+    // var re = /^[0-9]+.?[0-9]*/;//判断字符串是否为数字//判断正整数/[1−9]+[0−9]∗]∗/ 
+    let re = /^[0|1]\d{11}/
+
     if (!re.test(input)) {
         return false
     }
     return true
 }
 let n=0;
-async function dealPDF(p){
+async function dealPDF(p,name="陈黎明"){
+
     console.log("p:",p)
     console.log(++n)
     var pdfParser = new PDFParser(this, 1);
     pdfParser.loadPDF(p);
     let result = await new Promise((resolve,reject)=>{
-        setTimeout(()=>{
-            resolve()
-        },2000)
+        // setTimeout(()=>{
+        //     resolve()
+        // },2000)
         pdfParser.on('pdfParser_dataError', errData => reject(new Error(errData.parserError)));
         pdfParser.on('pdfParser_dataReady', () => {
             let data = pdfParser.getRawTextContent();
-            console.log(data);
+            // console.log("pdf的内容".red,data);
             let arr = data.split(/\r\n/)
             let brage = 0
             let brage1 = '';
@@ -35,23 +39,37 @@ async function dealPDF(p){
             }
 
             code = arr[brage];
+            console.log("code".red,code)
             num = arr[brage + 1];
+            console.log("num".red,num)
             console.log(arr[brage])
             
             console.log(arr[brage + 1])
 
-            let reg = /^[¥][0-9]+[.]?[0-9]+[\u4e00-\u9fa5]+$/
-            let reg2 = /\d+(\.\d+)?/ig
+            let reg = /(￥|¥)(-?[0-9,]+)(\.[0-9]+)?/g
+            // let reg = /"价税合计"+[\u4e00-\u9fa5]?(￥)(-?[0-9,]+)(\.[0-9]+)?/
+            // let reg2 = /\d+(\.\d+)?/ig
+            let reg2 = /\d+\.?\d*/g
+            
+
+            let arrmoney=[];
 
             for (let j = 0; j < arr.length; j++) {
-                if (reg.test(arr[j])) {
-                    brage1 = arr[j];
-                    break;
+                let n = arr[j].match(reg);
+                if(n!=null){
+                    arrmoney=[...n,...arrmoney]
+                    console.log(n);
                 }
             }
-            let money = brage1.match(reg2)[0];
+            console.log("arrmoney:".red,arrmoney);
+            // console.log("brage1:".red,brage1)
+            let moneys = arrmoney.map(e=>{
+                console.log(e.match(reg2)[0]);
+               return Number(e.match(reg2)[0])
+            })
+            let money = Math.max.apply(null,moneys);
             console.log(money)
-            fs.copyFileSync(p, `./pdf2/${code}-${num}-${money}-陈黎明.pdf`);
+            fs.copyFileSync(p, `./pdf2/${code}-${num}-${money}-${name}.pdf`);
             fs.unlinkSync(p);
             resolve()
         });
