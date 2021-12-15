@@ -3,14 +3,19 @@
 // let r = reg.test("合计￥35.85￥2.15")
 // console.log(r);
 // "pdf2json": "^1.2.0",
-const fs = require('fs');
-const   PDFParser = require("pdf2json");
+// const fs = require('fs');
+// const   PDFParser = require("pdf2json");
 
-    const pdfParser = new PDFParser();
+//     const pdfParser = new PDFParser();
 
-    pdfParser.on("pdfParser_dataError", errData => console.error(errData.parserError) );
-    pdfParser.on("pdfParser_dataReady", pdfData => {
-        fs.writeFile("./F1040EZ.json", JSON.stringify(pdfData),()=>{});
-    });
+//     pdfParser.on("pdfParser_dataError", errData => console.error(errData.parserError) );
+//     pdfParser.on("pdfParser_dataReady", pdfData => {
+//         fs.writeFile("./F1040EZ.json", JSON.stringify(pdfData),()=>{});
+//     });
 
-    pdfParser.loadPDF("./4.pdf");
+//     pdfParser.loadPDF("./4.pdf");
+
+let str = "21221--21212_2112—12-222_221-陈琳吗";
+let reg = /[-|_|—]+/;
+let arr = str.split(reg)
+console.log(arr);
