@@ -8,8 +8,7 @@ let pdfBase64 = fs.readFileSync('./pdf2/012002100311-54213119-39.9-陈黎明.pdf
 
 const clientConfig = {
   credential: {
-    secretId: "AKIDrYz92f16uRjolVzC8nCKBl6AxTigNoxp",
-    secretKey: "f3A0Zrra9RRAZhX6OP9ctud5F8k47uQf",
+   
   },
   region: "ap-beijing",
   profile: {
