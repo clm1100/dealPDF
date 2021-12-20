@@ -67,7 +67,10 @@ function fun5and7(data){
 
 
 function fun3(data){
-    let arr = data.split(/\r\n/)
+    let arr = data.split(/\r\n/);
+    // console.log("<=====1.3")
+    // console.log(arr);
+    // console.log("=====>1.3")
     let brage = 0
     let code ='';
     let num = ''
@@ -80,7 +83,7 @@ function fun3(data){
 
     code = arr[brage];
     num = arr[brage + 1];
-    let moneyText = arr[12];
+    let moneyText = arr[brage+11];
     let money = moneyText.replace(/[^0-9[.]/ig,"")
     return {
         code,
@@ -89,16 +92,21 @@ function fun3(data){
     }
 }
 
+function fun4plus(data){
+    return fun5and7(data)
+}
+
 
 function fun4(data){
     let arr = data.split(/\r\n/);
+    console.log("<=====1.4")
     console.log(arr);
+    console.log("=====>1.4")
     let codeText,numText,moneyText;
     let code,num,money;
 
     for (let i = 0; i < arr.length; i++) {
         if(arr[i].includes('发票代码')){
-            console.log("999999999999999")
             codeText= arr[i]
             continue
         }
@@ -116,6 +124,13 @@ function fun4(data){
       code  = codeText.replace(/[^0-9[.]/ig,"")
       num   = numText.replace(/[^0-9[.]/ig,"")
       money = moneyText.replace(/[^0-9[.]/ig,"")
+        console.log("<=====",code=="",num=="",money=="","===>")
+        if(code==''&&num==""){
+            let obj = fun4plus(data);
+            return {...obj}
+        }
+        
+
     } catch (error) {
         
     }

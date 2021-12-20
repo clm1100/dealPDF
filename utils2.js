@@ -41,9 +41,13 @@ async function dealPDF(p,name="陈黎明"){
             console.log("1.4")
             let {code,num,money} = fun4(r2)
             // console.log("疑点重重：",code,num,money)
-            fs.copyFileSync(p, `./pdf2/${code}-${num}-${money}-${name}.pdf`);
-            fs.unlinkSync(p);
-            resolve()
+            if(code==undefined&&num==undefined){
+                resolve()
+            }else{
+                fs.copyFileSync(p, `./pdf2/${code}-${num}-${money}-${name}.pdf`);
+                fs.unlinkSync(p);
+                resolve()
+            }
         }else{
             console.log("出现未知版本：",r1);
         }
