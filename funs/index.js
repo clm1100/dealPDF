@@ -99,9 +99,9 @@ function fun4plus(data){
 
 function fun4(data){
     let arr = data.split(/\r\n/);
-    console.log("<=====1.4")
-    console.log(arr);
-    console.log("=====>1.4")
+    // console.log("<=====1.4")
+    // console.log(arr);
+    // console.log("=====>1.4")
     let codeText,numText,moneyText;
     let code,num,money;
 
