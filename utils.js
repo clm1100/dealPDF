@@ -16,16 +16,13 @@ async function dealPDF(p,name="陈黎明"){
 
     console.log("p:",p)
     console.log(++n)
-    var pdfParser = new PDFParser(this, 1);
+    let pdfParser = new PDFParser();
     pdfParser.loadPDF(p);
     let result = await new Promise((resolve,reject)=>{
-        // setTimeout(()=>{
-        //     resolve()
-        // },2000)
         pdfParser.on('pdfParser_dataError', errData => reject(new Error(errData.parserError)));
         pdfParser.on('pdfParser_dataReady', () => {
             let data = pdfParser.getRawTextContent();
-            // console.log("pdf的内容".red,data);
+            console.log("pdf的内容".red,data);
             let arr = data.split(/\r\n/)
             let brage = 0
             let brage1 = '';
@@ -69,8 +66,8 @@ async function dealPDF(p,name="陈黎明"){
             })
             let money = Math.max.apply(null,moneys);
             console.log(money)
-            fs.copyFileSync(p, `./pdf2/${code}-${num}-${money}-${name}.pdf`);
-            fs.unlinkSync(p);
+            // fs.copyFileSync(p, `./pdf2/${code}-${num}-${money}-${name}.pdf`);
+            // fs.unlinkSync(p);
             resolve()
         });
     })
