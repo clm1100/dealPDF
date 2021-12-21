@@ -42,7 +42,8 @@ const titleStyle = {
 }
 
 let tableData = newarr.map(e=>{
-    let list = e.split('-');
+    let reg = /[-|_|—]+/;
+    let list = e.split(reg);
     let l = list.length;
     let code = ''
     let pingzheng = '';

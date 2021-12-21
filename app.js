@@ -4,9 +4,9 @@ const path = require('path');
 const pathPdf = process.cwd();
 const arr = fs.readdirSync(pathPdf);
 const dealPDF = require('./utils2');
-var exec = require('child_process').exec;
-var cmdStr = `rm -rf ${path.join(__dirname,'pdf2')}`;
-let name = process.argv[2];
+const exec = require('child_process').exec;
+const cmdStr = `rm -rf ${path.join(__dirname,'pdf2')}`;
+const name = process.argv[2];
 if(!name) return 
 
 (async()=>{
