@@ -5,7 +5,7 @@ const path = require('path');
 const {fun5and7,fun3,fun4} = require('./funs/index')
 
 let n=0;
-async function dealPDF(p,name="陈黎明"){
+async function dealPDF(p,name="陈黎明",dist){
 
     // console.log("p:",p)
     console.log(++n)
@@ -29,12 +29,12 @@ async function dealPDF(p,name="陈黎明"){
         // console.log(r1,r2);
         if(r1=='1.5'||r1=='1.7'){
             let {code,num,money} = fun5and7(r2)
-            fs.copyFileSync(p, `./pdf2/${code}-${num}-${money}-${name}.pdf`);
+            fs.copyFileSync(p, `./${dist}/${code}-${num}-${money}-${name}.pdf`);
             fs.unlinkSync(p);
             resolve()
         }else if(r1=='1.3'){
             let {code,num,money} = fun3(r2)
-            fs.copyFileSync(p, `./pdf2/${code}-${num}-${money}-${name}.pdf`);
+            fs.copyFileSync(p, `./${dist}/${code}-${num}-${money}-${name}.pdf`);
             fs.unlinkSync(p);
             resolve()
         }else if(r1=='1.4'){
@@ -44,7 +44,7 @@ async function dealPDF(p,name="陈黎明"){
             if(code==undefined&&num==undefined){
                 resolve()
             }else{
-                fs.copyFileSync(p, `./pdf2/${code}-${num}-${money}-${name}.pdf`);
+                fs.copyFileSync(p, `./${dist}/${code}-${num}-${money}-${name}.pdf`);
                 fs.unlinkSync(p);
                 resolve()
             }
