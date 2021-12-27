@@ -11,7 +11,7 @@ let H = d.getHours()
 let M = d.getMinutes()
 let S = d.getSeconds()
 
-let dist = H+":"+M+":"+S;
+let dist = "App"+H+""+M+""+S;
 
 // const exec = require('child_process').exec;
 // const cmdStr = `rm -rf ${path.join(__dirname,'pdf2')}`;
