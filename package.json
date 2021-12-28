@@ -1,13 +1,13 @@
 {
   "name": "dealfapiao",
-  "version": "1.0.28",
+  "version": "1.0.29",
   "description": "",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "start": "./app.js",
+    "s": "./app2.js",
     "excel": "./erxcel2.js"
   },
   "keywords": [
