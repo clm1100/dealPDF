@@ -13,35 +13,7 @@ let S = d.getSeconds()
 
 let dist = "App"+H+""+M+""+S;
 
-// const exec = require('child_process').exec;
-// const cmdStr = `rm -rf ${path.join(__dirname,'pdf2')}`;
-// const name = process.argv[2];
-// if(!name) return c'le
-
-// (async()=>{
-//     await new Promise((resolve,reject)=>{
-//         exec(cmdStr, function (err, stdout, srderr) {
-//             if (err) {
-//                 console.log(srderr);
-//                 resolve()
-//             } else {
-//                 console.log(stdout);
-//                 resolve()
-//             }
-//         })
-
-//     })
-//     fs.mkdirSync('pdf2')   
-//     let newarr = arr.filter(e=>!!e.includes('.pdf'))
-//     console.log(newarr);
-//     console.log(name)
-//     for (let i = 0; i < newarr.length; i++) {
-//         let p = path.join(pathPdf, newarr[i])
-//         await dealPDF(p,name)
-//     }
-// })()
-
-(async()=>{
+const start = async () => {
     console.log(dist)
     fs.mkdirSync(dist.toString())   
     let newarr = arr.filter(e=>!!e.includes('.pdf'))
@@ -51,4 +23,5 @@ let dist = "App"+H+""+M+""+S;
         let p = path.join(pathPdf, newarr[i])
         await dealPDF(p,name,dist)
     }
-})()
+}
+start();
